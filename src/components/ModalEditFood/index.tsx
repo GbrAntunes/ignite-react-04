@@ -10,7 +10,7 @@ interface ModalEditFoodProps {
   isOpen: boolean
   setIsOpen: () => void
   editingFood: IFood
-  handleUpdateFood: () => void
+  handleUpdateFood: (food: IFood) => void
 }
 
 function ModalEditFood({
@@ -22,7 +22,7 @@ function ModalEditFood({
 
   const formRef = useRef(null)
 
-  async function handleSubmit(data) {
+  async function handleSubmit(data: IFood) {
     handleUpdateFood(data);
     setIsOpen();
   };
